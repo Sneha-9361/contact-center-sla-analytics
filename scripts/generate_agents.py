@@ -4,7 +4,6 @@ import random
 # Fixed seed keeps data identical every time it runs
 random.seed(42)
 
-# Names for contact center staff
 first_names = [
     "Aarav", "Ananya", "Rohan", "Priya", "Karthik", "Sneha", "Vikram", "Pooja", 
     "Rahul", "Divya", "Arjun", "Meera", "Sanjay", "Deepika", "Aditya", "Neha", 
@@ -29,9 +28,6 @@ for agent_id in range(101, 151):  # Generates 50 Agents (IDs: 101 to 150)
         "Target_Handle_Time_Sec": random.choice([180, 240, 300, 360])
     })
 
-# Convert data into a structured table
 df_agents = pd.DataFrame(agents)
-
-# Save as CSV in the data folder
 df_agents.to_csv("data/dim_agents.csv", index=False)
 print("SUCCESS: data/dim_agents.csv created with 50 agent records.")
